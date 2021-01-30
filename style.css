@@ -71,7 +71,7 @@ nav ul li a:hover, a.active{
 
 .class-section{
     margin-top: 14px;
-    margin-right: 30px;
+    /* margin-right: 30px; */
 }
 .plus-minus-btn{
     color: #3352F2;
@@ -129,4 +129,16 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+
+.receipt-section{
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.bs-example {
+    margin: 20px;
 }
