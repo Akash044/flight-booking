@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <!-- Modal -->
+    <!-- Modal -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -82,6 +81,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="calculations">
                 <div class="amount">
                     <div class="left">
@@ -91,7 +91,6 @@
                         <p>$ <span id="subtotal-id">0</span></p>
                     </div>
                 </div>
-
                 <div class="amount">
                     <div class="left">
                         <p>Charge 10% VAT</p>
@@ -100,7 +99,7 @@
                         <p>$ <span id="vat-id">0</span></p>
                     </div>
                 </div>
-                <hr>
+
                 <div class="amount">
                     <div class="left">
                         <h4>Total</h4>
@@ -110,13 +109,14 @@
                     </div>
                 </div>
             </div>
-            <button id="book-now-btn-id" type="button" class="btn btn-primary btn-style" data-toggle="modal"data-target="#exampleModalCenter">
+            <button id="book-now-btn-id" type="button" class="btn btn-primary btn-style" data-toggle="modal"
+                data-target="#exampleModalCenter">
                 Book Now
             </button>
         </div>
         <!-- ./Booking Section end here -->
 
-         <!-- Receipt section start here -->
+        <!-- Receipt section start here -->
         <div id="receipt-section-id" class="receipt-section">
             <h3>Purchase Details</h3>
             <div>
@@ -139,7 +139,6 @@
                 <h5 class="text-primary">Total First Class Ticket ($150):</h5>
                 <p id="receipt-first-class" class="font-weight-bold bg-light"></p>
             </div>
-
             <div>
                 <h5 class="text-primary">Total Economy Ticket ($100):</h5>
                 <p id="receipt-economy" class="font-weight-bold bg-light"></p>
@@ -159,10 +158,8 @@
                 veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
                 voluptatibus quam</p>
         </div>
-         
     </main>
     <!-- ./Main Section end here -->
-
 
     <!-- Bonus area start here -->
     <section class="bonus-area">
@@ -196,12 +193,10 @@
                             <h5 class="text-primary">Return Date :</h5>
                             <p id="modal-return-date" class="font-weight-bold bg-light"></p>
                         </div>
-
                         <div>
                             <h5 class="text-primary">Total First Class Ticket ($150):</h5>
                             <p id="modal-first-class" class="font-weight-bold bg-light"></p>
                         </div>
-
                         <div>
                             <h5 class="text-primary">Total Economy Ticket ($100):</h5>
                             <p id="modal-economy" class="font-weight-bold bg-light"></p>
@@ -222,9 +217,7 @@
         </div>
         <!-- Modal end-->
     </section>
-
     <!--./ bonus area end-->
-
 </body>
 
 <script>
@@ -255,7 +248,7 @@
         forMinusBtnEventHandler(economyClassInputId, 100)
     })
     // economy section plus minus button event handler end here
-    
+
     //modal confirm button event handler start here
     const confirmBtnId = document.getElementById("confirm-btn-id");
     confirmBtnId.addEventListener("click", function () {
@@ -308,10 +301,10 @@
         document.getElementById("receipt-flying-from").innerText = "" + flyingFrom;
 
         const flyingTo = document.getElementById("flying-to-input-id").value;
-        document.getElementById("modal-flying-to").innerText = "" + flyingTo; 
-        document.getElementById("receipt-flying-to").innerText = "" + flyingTo; 
+        document.getElementById("modal-flying-to").innerText = "" + flyingTo;
+        document.getElementById("receipt-flying-to").innerText = "" + flyingTo;
 
-        const departureDate =  document.getElementById("departure-date-id").value;
+        const departureDate = document.getElementById("departure-date-id").value;
         document.getElementById("modal-departure-date").innerText = "" + departureDate;
         document.getElementById("receipt-departure-date").innerText = "" + departureDate;
 
