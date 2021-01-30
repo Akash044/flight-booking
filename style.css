@@ -75,8 +75,8 @@ nav ul li a:hover, a.active{
 }
 .plus-minus-btn{
     color: #3352F2;
-    padding: 1px;
-    margin-top: 2px;
+    padding: 2px;
+    margin-top: 10px;
     word-spacing: 20px;
     background-color: white;
     border-color: white;

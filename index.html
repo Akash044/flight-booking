@@ -112,68 +112,70 @@
                 </div>
             </div>
 
+            <!-- Bonus area start here -->
+            <section class="bonus-area">
+                <!-- Button trigger modal -->
+                <button id="book-now-btn-id" type="button" class="btn btn-primary btn-style" data-toggle="modal"
+                    data-target="#exampleModalCenter">
+                    Book Now
+                </button>
 
-            <!-- Button trigger modal -->
-            <button id="book-now-btn-id" type="button" class="btn btn-primary btn-style" data-toggle="modal"
-                data-target="#exampleModalCenter">
-                Book Now
-            </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">
+                                    <h3>Booking Flights</h3>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <h5 class="text-primary">Flying From :</h5>
+                                    <p id="flying-from-id" class="font-weight-bold bg-light"></p>
+                                </div>
+                                <div>
+                                    <h5 class="text-primary">Flying To :</h5>
+                                    <p id="flying-to-id" class="font-weight-bold bg-light"></p>
+                                </div>
+                                <div>
+                                    <h5 class="text-primary">Departure Date :</h5>
+                                    <p id="departure-id" class="font-weight-bold bg-light"></p>
+                                </div>
+                                <div>
+                                    <h5 class="text-primary">Return Date :</h5>
+                                    <p id="return-id" class="font-weight-bold bg-light"></p>
+                                </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">
-                                <h3>Booking Flights</h3>
-                            </h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div>
-                                <h5 class="text-primary">Flying From :</h5>
-                                <p id="flying-from-id" class="font-weight-bold bg-light"></p>
-                            </div>
-                            <div>
-                                <h5 class="text-primary">Flying To :</h5>
-                                <p id="flying-to-id" class="font-weight-bold bg-light"></p>
-                            </div>
-                            <div>
-                                <h5 class="text-primary">Departure Date :</h5>
-                                <p id="departure-id" class="font-weight-bold bg-light"></p>
-                            </div>
-                            <div>
-                                <h5 class="text-primary">Return Date :</h5>
-                                <p id="return-id" class="font-weight-bold bg-light"></p>
-                            </div>
+                                <div>
+                                    <h5 class="text-primary">Total First Class Ticket ($150):</h5>
+                                    <p id="first-id" class="font-weight-bold bg-light"></p>
+                                </div>
 
-                            <div>
-                                <h5 class="text-primary">Total First Class Ticket ($150):</h5>
-                                <p id="first-id" class="font-weight-bold bg-light"></p>
+                                <div>
+                                    <h5 class="text-primary">Total Economy Ticket ($100):</h5>
+                                    <p id="economy-id" class="font-weight-bold bg-light"></p>
+                                </div>
+                                <div>
+                                    <h5>Subtotal : $ <span id="subtotal" class="bg-light text-danger"></span></h5>
+                                    <h5>Charge (10%) VAT : $ <span id="VAT" class="bg-light text-danger"></span></h5>
+                                    <h4>Total : $ <span id="total" class="bg-light text-danger"></span></h4>
+                                </div>
                             </div>
-
-                            <div>
-                                <h5 class="text-primary">Total Economy Ticket ($100):</h5>
-                                <p id="economy-id" class="font-weight-bold bg-light"></p>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirmed</button>
                             </div>
-                            <div>
-                                <h5>Subtotal : $ <span id="subtotal" class="bg-light text-danger"></span></h5>
-                                <h5>Charge (10%) VAT : $ <span id="VAT" class="bg-light text-danger"></span></h5>
-                                <h4>Total : $ <span id="total" class="bg-light text-danger"></span></h4>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Confirmed</button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--./ Modal end-->
+                <!-- Modal end-->
+            </section>
+            <!--./ bonus area end-->
 
 
         </div>
@@ -187,57 +189,55 @@
 </body>
 
 <script>
-    const flyingFromInputId = document.getElementById("flying-from-input-id");
-    const flyingToInputId = document.getElementById("flying-to-input-id");
 
-    const departureDateInputId = document.getElementById("departure-date-id");
-    const returnDateInputId = document.getElementById("return-date-id");
-
-    const firstClassInputId = document.getElementById("first-class-input-id");
-    const economyClassInputId = document.getElementById("economy-class-input-id");
-
+    // first class section plus minus button event handler start here
     const firstClassPlusBtnId = document.getElementById("first-class-plus");
+    firstClassPlusBtnId.addEventListener("click", function () {
+        const firstClassInputId = document.getElementById("first-class-input-id");
+        forPlusBtnEventHandler(firstClassInputId, 150)
+    })
     const firstClassMinusBtnId = document.getElementById("first-class-minus");
+    firstClassMinusBtnId.addEventListener("click", function () {
+        const firstClassInputId = document.getElementById("first-class-input-id");
+        forMinusBtnEventHandler(firstClassInputId, 150)
+    })
+    // first class section plus minus button event handler end here
+
+
+    // economy section plus minus button event handler start here
     const economyClassPlusBtnId = document.getElementById("economy-class-plus");
+    economyClassPlusBtnId.addEventListener("click", function () {
+        const economyClassInputId = document.getElementById("economy-class-input-id");
+        forPlusBtnEventHandler(economyClassInputId, 100)
+    })
     const economyClassMinusBtnId = document.getElementById("economy-class-minus");
+    economyClassMinusBtnId.addEventListener("click", function () {
+        const economyClassInputId = document.getElementById("economy-class-input-id");
+        forMinusBtnEventHandler(economyClassInputId, 100)
+    })
+    // economy section plus minus button event handler end here
 
     const subTotalId = document.getElementById("subtotal-id");
     const vatId = document.getElementById("vat-id");
     const totalId = document.getElementById("total-id");
 
-    const bookNowBtnId = document.getElementById("book-now-btn-id");
-
-
-    firstClassPlusBtnId.addEventListener("click", function () {
-        forPlusBtnEventHandler(firstClassInputId, 150)
-    })
-
-    firstClassMinusBtnId.addEventListener("click", function () {
-        forMinusBtnEventHandler(firstClassInputId, 150)
-    })
-    economyClassPlusBtnId.addEventListener("click", function () {
-        forPlusBtnEventHandler(economyClassInputId, 100)
-    })
-
-    economyClassMinusBtnId.addEventListener("click", function () {
-        forMinusBtnEventHandler(economyClassInputId, 100)
-    })
-
+    //common function variables are declared here
     var totalCurrentTicket;
     var currentSubTotal;
     var newSubTotal;
+
+    //plus buttons event handler function
     function forPlusBtnEventHandler(inputId, ticketPrice) {
         totalCurrentTicket = parseInt(inputId.value);
         totalCurrentTicket++;
         inputId.value = totalCurrentTicket;
-
         currentSubTotal = parseInt(subTotalId.innerText);
         newSubTotal = currentSubTotal + ticketPrice;
         subTotalId.innerText = newSubTotal;
         vatId.innerText = newSubTotal * (10 / 100);
         totalId.innerText = newSubTotal + newSubTotal * (10 / 100);
     }
-
+    //minus buttons event handler function
     function forMinusBtnEventHandler(inputId, ticketPrice) {
         totalCurrentTicket = parseInt(inputId.value);
         totalCurrentTicket--;
@@ -251,22 +251,21 @@
         }
     }
 
-
+    //setting popup window(modal) values
+    const bookNowBtnId = document.getElementById("book-now-btn-id");
     bookNowBtnId.addEventListener("click", function () {
-        document.getElementById("flying-from-id").innerText = "" + flyingFromInputId.value;
-        document.getElementById("flying-to-id").innerText = "" + flyingToInputId.value;
+        document.getElementById("flying-from-id").innerText = "" + document.getElementById("flying-from-input-id").value;
+        document.getElementById("flying-to-id").innerText = "" + document.getElementById("flying-to-input-id").value;
 
-        document.getElementById("departure-id").innerText = "" + departureDateInputId.value;
-        document.getElementById("return-id").innerText = "" + returnDateInputId.value;
+        document.getElementById("departure-id").innerText = "" + document.getElementById("departure-date-id").value;
+        document.getElementById("return-id").innerText = "" + document.getElementById("return-date-id").value;
 
-        document.getElementById("first-id").innerText = "" + firstClassInputId.value;
-        document.getElementById("economy-id").innerText = "" + economyClassInputId.value;
+        document.getElementById("first-id").innerText = "" + document.getElementById("first-class-input-id").value;
+        document.getElementById("economy-id").innerText = "" + document.getElementById("economy-class-input-id").value;
 
         document.getElementById("subtotal").innerText = "" + subTotalId.innerText;
         document.getElementById("VAT").innerText = "" + vatId.innerText;
         document.getElementById("total").innerText = "" + totalId.innerText;
-
-
     })
 </script>
 
